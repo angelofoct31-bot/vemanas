@@ -1,19 +1,25 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+<button onclick="payNow()">Pay Now</button>
+
 <script>
-var options = {
-  key: "YOUR_KEY",
-  amount: "50000",
-  currency: "INR",
+function payNow() {
+  var options = {
+    key: "rzp_test_SegMeT19Xt0lNT",
+    amount: "49900",
+    currency: "INR",
+    name: "Vemanas Internship",
 
-  handler: function (response) {
-    var paymentId = response.razorpay_payment_id;
+    handler: function (response) {
+      var paymentId = response.razorpay_payment_id;
 
-    window.location.href =
-      "https://forms.gle/YOUR_FORM?entry.123456=" + paymentId;
-  }
-};
+      window.location.href =
+        "https://docs.google.com/forms/d/e/1FAIpQLSeQbpIy6h79lzMqh_ajM-Ls_q52oDfsiU5v5oqki2duN7yB_A/viewform?usp=pp_url&entry.2042824882=" 
+        + paymentId;
+    }
+  };
 
-var rzp = new Razorpay(options);
-rzp.open();
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
 </script>
