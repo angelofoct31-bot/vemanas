@@ -1,0 +1,19 @@
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+var options = {
+  key: "YOUR_KEY",
+  amount: "50000",
+  currency: "INR",
+
+  handler: function (response) {
+    var paymentId = response.razorpay_payment_id;
+
+    window.location.href =
+      "https://forms.gle/YOUR_FORM?entry.123456=" + paymentId;
+  }
+};
+
+var rzp = new Razorpay(options);
+rzp.open();
+</script>
