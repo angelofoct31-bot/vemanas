@@ -1,25 +1,206 @@
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-<button onclick="payNow()">Pay Now</button>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fb;
+    }
+
+    /* NAVBAR */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+      color: #0d47a1;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1565c0, #0d47a1);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: white;
+      color: #0d47a1;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-bottom: 30px;
+      color: #0d47a1;
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 250px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #0d47a1;
+    }
+
+    /* CTA */
+    .cta {
+      background: #0d47a1;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta button {
+      background: white;
+      color: #0d47a1;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <div class="logo">Vemanas Innovation</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Launch Your Career with Real-World Internships</h1>
+  <p>Join our industry-focused online internship programs and gain hands-on experience</p>
+  <button onclick="payNow()">Apply Now ₹10</button>
+</div>
+
+<!-- INTERNSHIPS -->
+<div class="section">
+  <h2>Available Domains</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Artificial Intelligence</h3>
+      <p>Work on AI models, automation, and real datasets.</p>
+    </div>
+    <div class="card">
+      <h3>Data Analysis</h3>
+      <p>Work on data visualization, analytics, and insights.</p>
+    </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Build modern websites and real-world projects.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="section">
+  <h2>What You Get</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Hands-on Projects</h3>
+      <p>Gain real-world experience</p>
+    </div>
+    <div class="card">
+      <h3>Certificate</h3>
+      <p>Boost your resume</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Start Your Internship Journey Today</h2>
+  <p>Limited seats available. Apply now!</p>
+  <button onclick="payNow()">Pay & Apply</button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Vemanas Innovation Center. All rights reserved.
+</div>
 
 <script>
 function payNow() {
   var options = {
-    key: "rzp_test_SegMeT19Xt0lNT",
-    amount: "49900",
+    key: "rzp_live_SdghPoD6slRXBu",
+    amount: "1000",
     currency: "INR",
-    name: "Vemanas Internship",
+    name: "Vemanas",
 
-    handler: function (response) {
-      var paymentId = response.razorpay_payment_id;
+handler: function (response) {
+    alert("Payment successful!");
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeQbpIy6h79lzMqh_ajM-Ls_q52oDfsiU5v5oqki2duN7yB_A/viewform?usp=dialog";
+}   
 
-      window.location.href =
-        "https://docs.google.com/forms/d/e/1FAIpQLSeQbpIy6h79lzMqh_ajM-Ls_q52oDfsiU5v5oqki2duN7yB_A/viewform?usp=pp_url&entry.2042824882=" 
-        + paymentId;
-    }
-  };
-
-  var rzp = new Razorpay(options);
-  rzp.open();
 }
 </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
